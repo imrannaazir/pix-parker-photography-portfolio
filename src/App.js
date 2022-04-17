@@ -1,10 +1,28 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import About from './components/About/About';
+import Blogs from './components/Blogs/Blogs';
+import Footer from './components/Footer/Footer';
+import Home from './components/Home/Home';
+import Login from './components/Login/Login';
+import Navbar from './components/Navbar/Navbar';
+import Services from './components/Services/Services';
+import SignUp from './components/SignUp/SignUp';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Pix Parker</h1>
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/services' element={<Services />} />
+        <Route path='/blogs' element={<Blogs />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<SignUp />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
