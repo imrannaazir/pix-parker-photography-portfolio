@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import google from '../../assets/images/google.png'
 import facebook from '../../assets/images/facebook.png'
 import github from '../../assets/images/github.png'
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Login = () => {
     const [userInfo, setUserInfo] = useState({
@@ -43,12 +45,27 @@ const Login = () => {
             setErrors({ ...errors, passwordError: 'Password must be minimum 6 characters!' })
         }
     }
-    console.log(userInfo.email, userInfo.password);
+
+
+    //sign in with email and password hook
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
+
+    //handle login with email and password function
+    const handleLoginWithEmail = e => {
+        e.preventDefault()
+        signInWithEmailAndPassword(userInfo.email, userInfo.password)
+    }
     return (
         <div className=' w-[380px] mx-auto shadow-md my-20 py-4 rounded-xl'>
             <p className='ml-[15px] text-2xl border-b-2 inline-block border-[#DF1F2D] my-3' >Login</p>
             {/* form started */}
-            <form className='ml-[15px] flex flex-col gap-1' >
+            <form onSubmit={handleLoginWithEmail} className='ml-[15px] flex flex-col gap-1' >
                 {/* email input field */}
                 <p>Email</p>
                 <input onChange={emailChange} className='w-[350px] py-2 pl-2 rounded-full border-[#DF1F2D] border' type="text" />

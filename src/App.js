@@ -8,10 +8,12 @@ import Login from './components/Login/Login';
 import Navbar from './components/Navbar/Navbar';
 import Services from './components/Services/Services';
 import SignUp from './components/SignUp/SignUp';
+import banner from '../src/assets/videos/banner.mp4'
 
 function App() {
   return (
     <div>
+
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />

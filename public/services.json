@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "packageNo": "Package 01",
+        "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/spider-man-1627065947.jpeg",
+        "packageName": "Photography",
+        "packageSubtitle": "Static photography of Spiderman",
+        "price": 300,
+        "details": [
+            "10 static photo of spaiderman",
+            "1 swing photography of Spaiderman",
+            "No videography",
+            "3 printed copy"
+        ]
+    },
+    {
+        "id": 2,
+        "packageNo": "Package 01",
+        "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/spider-man-1627065947.jpeg",
+        "packageName": "Photography",
+        "packageSubtitle": "Static photography of Spiderman",
+        "price": 300,
+        "details": [
+            "10 static photo of spaiderman",
+            "1 swing photography of Spaiderman",
+            "No videography",
+            "3 printed copy"
+        ]
+    },
+    {
+        "id": 3,
+        "packageNo": "Package 01",
+        "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/spider-man-1627065947.jpeg",
+        "packageName": "Photography",
+        "packageSubtitle": "Static photography of Spiderman",
+        "price": 300,
+        "details": [
+            "10 static photo of spaiderman",
+            "1 swing photography of Spaiderman",
+            "No videography",
+            "3 printed copy"
+        ]
+    }
+]
