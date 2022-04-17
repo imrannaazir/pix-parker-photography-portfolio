@@ -8,7 +8,7 @@ const Navbar = () => {
     const [user, loading, error] = useAuthState(auth);
 
     return (
-        <div className=' sticky w-[100%] top-0 bg-[#DF1F2D]   py-6 text-white'>
+        <div className=' sticky w-[100%] top-0 bg-[#DF1F2D]   py-6 text-white z-10'>
             <nav className=' flex justify-between w-[90%] mx-auto'>
                 <div>
                     PixParker
