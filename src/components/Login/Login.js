@@ -15,22 +15,51 @@ const Login = () => {
         passwordError: ''
     })
 
+    // input onchange function for email
     const emailChange = e => {
-        setUserInfo({ ...userInfo, email: e.target.value })
+        const emailRegx = /\S+@\S+\.\S+/
+        const validEmail = emailRegx.test(e.target.value)
+        if (validEmail) {
+            setUserInfo({ ...userInfo, email: e.target.value })
+            setErrors({ ...errors, emailError: '' })
+        }
+        else {
+            setUserInfo({ ...userInfo, email: '' })
+            setErrors({ ...errors, emailError: 'Please provide a valid email!' })
+        }
     }
 
+
+    // input onchange function for password
     const passwordChange = e => {
-        setUserInfo({ ...userInfo, password: e.target.value })
+        const passwordRegx = /.{6,}/
+        const validPassword = passwordRegx.test(e.target.value)
+        if (validPassword) {
+            setUserInfo({ ...userInfo, password: e.target.value })
+            setErrors({ ...errors, passwordError: '' })
+        }
+        else {
+            setUserInfo({ ...userInfo, password: '' })
+            setErrors({ ...errors, passwordError: 'Password must be minimum 6 characters!' })
+        }
     }
     console.log(userInfo.email, userInfo.password);
     return (
         <div className=' w-[380px] mx-auto shadow-md my-20 py-4 rounded-xl'>
             <p className='ml-[15px] text-2xl border-b-2 inline-block border-[#DF1F2D] my-3' >Login</p>
+            {/* form started */}
             <form className='ml-[15px] flex flex-col gap-1' >
+                {/* email input field */}
                 <p>Email</p>
                 <input onChange={emailChange} className='w-[350px] py-2 pl-2 rounded-full border-[#DF1F2D] border' type="text" />
+                <p className=' pl-2 text-red-600'>{errors.emailError}</p>
+
+                {/* password input field */}
                 <p>Password</p>
                 <input onChange={passwordChange} className='w-[350px] py-2 pl-2 rounded-full border-[#DF1F2D] border' type="password" name="" id="" />
+                <p className=' pl-2 text-red-600'>{errors.passwordError}</p>
+
+
                 <p className=' text-right mr-5 text-sm'>Forget password?</p>
 
 

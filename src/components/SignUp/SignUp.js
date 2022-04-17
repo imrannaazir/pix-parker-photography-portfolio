@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import google from '../../assets/images/google.png'
 import facebook from '../../assets/images/facebook.png'
 import github from '../../assets/images/github.png'
+import auth from '../../firebase.init';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+
 
 const SignUp = () => {
 
@@ -61,11 +64,25 @@ const SignUp = () => {
         }
     }
 
+
+    // useCreateUserWithEmailAndPassword
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
+
+    const handleCreateUserWithEmail = e => {
+        e.preventDefault()
+        createUserWithEmailAndPassword(userInfo.email, userInfo.password)
+    }
+
     return (
         <div className=' w-[380px] mx-auto shadow-md my-20 py-4 rounded-xl'>
             <p className='ml-[15px] text-2xl border-b-2 inline-block border-[#DF1F2D] my-3' >Sign up</p>
             {/* form started */}
-            <form className='ml-[15px] flex flex-col gap-1' >
+            <form onSubmit={handleCreateUserWithEmail} className='ml-[15px] flex flex-col gap-1' >
 
                 {/* email field */}
                 <p>Email</p>
@@ -83,7 +100,7 @@ const SignUp = () => {
                 <p className=' pl-2 text-red-600'>{errors.confirmPassError}</p>
 
                 {/* sign up button */}
-                <button className='w-[350px] py-2 pl-2 rounded-full bg-[#DF1F2D] hover:bg-gray-400 border text-white mt-2' type="submit">Login</button>
+                <button className='w-[350px] py-2 pl-2 rounded-full bg-[#DF1F2D] hover:bg-gray-400 border text-white mt-2' type="submit">Sign up</button>
                 <p className=' text-sm ml-1 mt-1 font-[500]   text-gray-400'>Already have an account?<Link className=' text-[#DF1F2D] underline' to='/login'>Login</Link></p>
             </form>
             <div className="flex justify-evenly space-x-2 w-64 mt-4 mx-auto">
