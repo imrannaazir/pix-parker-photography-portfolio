@@ -6,7 +6,7 @@ import github from '../../assets/images/github.png'
 
 const Login = () => {
     return (
-        <div className=' w-[380px] mx-auto shadow-md my-20 py-4'>
+        <div className=' w-[380px] mx-auto shadow-md my-20 py-4 rounded-xl'>
             <p className='ml-[15px] text-2xl border-b-2 inline-block border-[#DF1F2D] my-3' >Login</p>
             <form className='ml-[15px] flex flex-col gap-1' >
                 <p>Email</p>
