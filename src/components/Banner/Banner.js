@@ -5,7 +5,7 @@ const Banner = () => {
     return (
         <div>
             <div >
-                {/* <video className='w-[100%] static top-0' src={banner} autoPlay loop muted></video> */}
+                <video className='w-[100%] static top-0' src={banner} autoPlay loop muted></video>
             </div>
         </div>
     );
