@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-        <div className=' sticky w-[100%] top-0 bg-[#DF1F2D] opacity-50  py-6 text-white'>
+        <div className=' sticky w-[100%] top-0 bg-[#DF1F2D]   py-6 text-white'>
             <nav className=' flex justify-between w-[90%] mx-auto'>
                 <div>
                     PixParker
