@@ -1,10 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import google from '../../assets/images/google.png'
 import facebook from '../../assets/images/facebook.png'
 import github from '../../assets/images/github.png'
 
 const SignUp = () => {
+
+    const [userInfo, setUserInfo] = useState({
+        email: '',
+        password: '',
+        confirmPass: ''
+    })
+
+
+    const [errors, setErrors] = useState({
+        emailError: '',
+        passwordError: '',
+        confirmPassError: ''
+    })
+
+    // input onchange function for email
+    const emailChange = e => {
+        const emailRegx = /\S+@\S+\.\S+/
+        const validEmail = emailRegx.test(e.target.value)
+        if (validEmail) {
+            setUserInfo({ ...userInfo, email: e.target.value })
+            setErrors({ ...errors, emailError: '' })
+        }
+        else {
+            setUserInfo({ ...userInfo, email: '' })
+            setErrors({ ...errors, emailError: 'Please provide a valid email!' })
+        }
+    }
+
+
+    // input onchange function for password
+    const passwordChange = e => {
+        const passwordRegx = /.{6,}/
+        const validPassword = passwordRegx.test(e.target.value)
+        if (validPassword) {
+            setUserInfo({ ...userInfo, password: e.target.value })
+            setErrors({ ...errors, passwordError: '' })
+        }
+        else {
+            setUserInfo({ ...userInfo, password: '' })
+            setErrors({ ...errors, passwordError: 'Password must be minimum 6 characters!' })
+        }
+    }
+
+
+    // input onchange function for confirm password
+    const confirmPassChange = e => {
+        if (e.target.value === userInfo.password) {
+            setUserInfo({ ...userInfo, confirmPass: e.target.value })
+            setErrors({ ...errors, confirmPassError: '' })
+        }
+        else {
+            setUserInfo({ ...userInfo, confirmPass: '' })
+            setErrors({ ...errors, confirmPassError: 'Password does not match!' })
+        }
+    }
 
     return (
         <div className=' w-[380px] mx-auto shadow-md my-20 py-4 rounded-xl'>
@@ -14,16 +69,18 @@ const SignUp = () => {
 
                 {/* email field */}
                 <p>Email</p>
-                <input className='w-[350px] py-2 pl-2 rounded-full border-[#DF1F2D] border' type="text" />
+                <input onChange={emailChange} className='w-[350px] py-2 pl-2 rounded-full border-[#DF1F2D] border' type="text" />
+                <p className=' pl-2 text-red-600'>{errors.emailError}</p>
 
                 {/* password field */}
                 <p>Password</p>
-                <input className='w-[350px] py-2 pl-2 rounded-full border-[#DF1F2D] border' type="password" name="" id="" />
+                <input onChange={passwordChange} className='w-[350px] py-2 pl-2 rounded-full border-[#DF1F2D] border' type="password" name="" id="" />
+                <p className=' pl-2 text-red-600'>{errors.passwordError}</p>
 
                 {/* confirm password field */}
                 <p>Confirm Password</p>
-                <input className='w-[350px] py-2 pl-2 rounded-full border-[#DF1F2D] border' type="password" name="" id="" />
-
+                <input onChange={confirmPassChange} className='w-[350px] py-2 pl-2 rounded-full border-[#DF1F2D] border' type="password" name="" id="" />
+                <p className=' pl-2 text-red-600'>{errors.confirmPassError}</p>
 
                 {/* sign up button */}
                 <button className='w-[350px] py-2 pl-2 rounded-full bg-[#DF1F2D] hover:bg-gray-400 border text-white mt-2' type="submit">Login</button>

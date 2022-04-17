@@ -1,18 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import google from '../../assets/images/google.png'
 import facebook from '../../assets/images/facebook.png'
 import github from '../../assets/images/github.png'
 
 const Login = () => {
+    const [userInfo, setUserInfo] = useState({
+        email: '',
+        password: ''
+    })
+
+    const [errors, setErrors] = useState({
+        emailError: '',
+        passwordError: ''
+    })
+
+    const emailChange = e => {
+        setUserInfo({ ...userInfo, email: e.target.value })
+    }
+
+    const passwordChange = e => {
+        setUserInfo({ ...userInfo, password: e.target.value })
+    }
+    console.log(userInfo.email, userInfo.password);
     return (
         <div className=' w-[380px] mx-auto shadow-md my-20 py-4 rounded-xl'>
             <p className='ml-[15px] text-2xl border-b-2 inline-block border-[#DF1F2D] my-3' >Login</p>
             <form className='ml-[15px] flex flex-col gap-1' >
                 <p>Email</p>
-                <input className='w-[350px] py-2 pl-2 rounded-full border-[#DF1F2D] border' type="text" />
+                <input onChange={emailChange} className='w-[350px] py-2 pl-2 rounded-full border-[#DF1F2D] border' type="text" />
                 <p>Password</p>
-                <input className='w-[350px] py-2 pl-2 rounded-full border-[#DF1F2D] border' type="password" name="" id="" />
+                <input onChange={passwordChange} className='w-[350px] py-2 pl-2 rounded-full border-[#DF1F2D] border' type="password" name="" id="" />
                 <p className=' text-right mr-5 text-sm'>Forget password?</p>
 
 
