@@ -9,6 +9,8 @@ import Navbar from './components/Navbar/Navbar';
 import Services from './components/Services/Services';
 import SignUp from './components/SignUp/SignUp';
 import banner from '../src/assets/videos/banner.mp4'
+import Checkout from './components/CheckOut/Checkout';
+import RequireAuth from './components/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
         <Route path='/services' element={<Services />} />
+        <Route path='/checkout/:serviceId' element={<RequireAuth><Checkout /></RequireAuth>} />
         <Route path='/blogs' element={<Blogs />} />
         <Route path='/about' element={<About />} />
         <Route path='/login' element={<Login />} />

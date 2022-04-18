@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import google from '../../assets/images/google.png'
 import facebook from '../../assets/images/facebook.png'
 import github from '../../assets/images/github.png'
@@ -7,6 +7,10 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 const Login = () => {
+    const navigate = useNavigate()
+    const location = useLocation()
+    let from = location.state?.from?.pathname || "/";
+
     const [userInfo, setUserInfo] = useState({
         email: '',
         password: ''
@@ -60,6 +64,7 @@ const Login = () => {
     const handleLoginWithEmail = e => {
         e.preventDefault()
         signInWithEmailAndPassword(userInfo.email, userInfo.password)
+        navigate(from, { replace: true });
     }
     return (
         <div className=' w-[380px] mx-auto shadow-md my-20 py-4 rounded-xl'>
