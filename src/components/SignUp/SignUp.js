@@ -80,22 +80,22 @@ const SignUp = () => {
 
     return (
         <div className=' w-[380px] mx-auto shadow-md my-20 py-4 rounded-xl'>
-            <p className='ml-[15px] text-2xl border-b-2 inline-block border-[#DF1F2D] my-3' >Sign up</p>
+            <p className='ml-[15px] text-2xl border-b-2 inline-block border-[#DF1F2D] my-3 text-white' >Sign up</p>
             {/* form started */}
             <form onSubmit={handleCreateUserWithEmail} className='ml-[15px] flex flex-col gap-1' >
 
                 {/* email field */}
-                <p>Email</p>
+                <p className=' text-white'>Email</p>
                 <input onChange={emailChange} className='w-[350px] py-2 pl-2 rounded-full border-[#DF1F2D] border' type="text" />
                 <p className=' pl-2 text-red-600'>{errors.emailError}</p>
 
                 {/* password field */}
-                <p>Password</p>
+                <p className=' text-white'>Password</p>
                 <input onChange={passwordChange} className='w-[350px] py-2 pl-2 rounded-full border-[#DF1F2D] border' type="password" name="" id="" />
                 <p className=' pl-2 text-red-600'>{errors.passwordError}</p>
 
                 {/* confirm password field */}
-                <p>Confirm Password</p>
+                <p className=' text-white'>Confirm Password</p>
                 <input onChange={confirmPassChange} className='w-[350px] py-2 pl-2 rounded-full border-[#DF1F2D] border' type="password" name="" id="" />
                 <p className=' pl-2 text-red-600'>{errors.confirmPassError}</p>
 

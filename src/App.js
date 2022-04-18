@@ -12,10 +12,11 @@ import banner from '../src/assets/videos/banner.mp4'
 import Checkout from './components/CheckOut/Checkout';
 import RequireAuth from './components/RequireAuth/RequireAuth';
 import NotFound from './components/NotFound/NotFound';
+import BlogDetails from './components/BlogDetails/BlogDetails';
 
 function App() {
   return (
-    <div>
+    <div className='bg-black absolute top-0 w-full'>
 
       <Navbar />
       <Routes>
@@ -28,7 +29,9 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='*' element={<NotFound />} />
+        <Route path='/blogdetails/:blogId' element={<BlogDetails />} />
       </Routes>
+      <hr />
       <Footer />
     </div>
   );

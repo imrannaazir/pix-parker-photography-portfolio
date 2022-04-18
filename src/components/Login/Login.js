@@ -73,22 +73,22 @@ const Login = () => {
         }
     }, [user]);
     return (
-        <div className=' w-[380px] mx-auto shadow-md my-20 py-4 rounded-xl'>
-            <p className='ml-[15px] text-2xl border-b-2 inline-block border-[#DF1F2D] my-3' >Login</p>
+        <div className='w-[380px] mx-auto shadow-md my-20 py-4 rounded-xl'>
+            <p className='ml-[15px] text-2xl border-b-2 inline-block border-[#DF1F2D] my-3  text-white' >Login</p>
             {/* form started */}
             <form onSubmit={handleLoginWithEmail} className='ml-[15px] flex flex-col gap-1' >
                 {/* email input field */}
-                <p>Email</p>
+                <p className=' text-white'>Email</p>
                 <input onChange={emailChange} className='w-[350px] py-2 pl-2 rounded-full border-[#DF1F2D] border' type="text" />
                 <p className=' pl-2 text-red-600'>{errors.emailError}</p>
 
                 {/* password input field */}
-                <p>Password</p>
+                <p className=' text-white'>Password</p>
                 <input onChange={passwordChange} className='w-[350px] py-2 pl-2 rounded-full border-[#DF1F2D] border' type="password" name="" id="" />
                 <p className=' pl-2 text-red-600'>{errors.passwordError}</p>
 
 
-                <p className=' text-right mr-5 text-sm'>Forget password?</p>
+                <p className=' text-right mr-5 text-sm  text-white'>Forget password?</p>
 
 
 

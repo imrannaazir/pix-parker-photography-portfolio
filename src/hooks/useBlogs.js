@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const useBlog = () => {
+const useBlogs = () => {
     const [blogs, setBlogs] = useState([])
     useEffect(() => {
         fetch('blogs.json')
@@ -10,4 +10,4 @@ const useBlog = () => {
     return { blogs, setBlogs }
 };
 
-export default useBlog;
+export default useBlogs;

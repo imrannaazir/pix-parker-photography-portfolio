@@ -5,6 +5,7 @@ import Blogs from '../Blogs/Blogs';
 import Services from '../Services/Services';
 
 const Home = () => {
+
     return (
         <div id='home' className=''>
             <Banner />

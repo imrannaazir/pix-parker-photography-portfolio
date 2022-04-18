@@ -1,11 +1,11 @@
 [
     {
-        "id": 1,
+        "id": "1",
         "packageNo": "Package 01",
         "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/spider-man-1627065947.jpeg",
         "packageName": "Photography",
         "packageSubtitle": "Static photography of Spiderman",
-        "price": 300,
+        "price": "300",
         "details": [
             "10 static photo of spaiderman",
             "1 swing photography",
@@ -14,31 +14,31 @@
         ]
     },
     {
-        "id": 2,
-        "packageNo": "Package 01",
-        "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/spider-man-1627065947.jpeg",
-        "packageName": "Photography",
-        "packageSubtitle": "Static photography of Spiderman",
-        "price": 300,
+        "id": "2",
+        "packageNo": "Package 02",
+        "img": "https://wallpapercave.com/wp/wp8328192.jpg",
+        "packageName": "Recommended",
+        "packageSubtitle": "Swing photography of Spiderman",
+        "price": "500",
         "details": [
-            "10 static photo of spaiderman",
-            "1 swing photography",
-            "No videography",
-            "3 printed copy"
+            "15 static photo of spaiderman",
+            "10 swing photography",
+            "1 videography",
+            "10 printed copy"
         ]
     },
     {
-        "id": 3,
-        "packageNo": "Package 01",
-        "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/spider-man-1627065947.jpeg",
-        "packageName": "Photography",
-        "packageSubtitle": "Static photography of Spiderman",
-        "price": 300,
+        "id": "3",
+        "packageNo": "Package 03",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOkgSMMvoaIZXGS4O1svZ56Lp5kowh7I_wZ_fJ03FqBd3JUKwesS990SGZSqwEofdxGT4&usqp=CAU",
+        "packageName": "Videography",
+        "packageSubtitle": "New Videography of Spiderman",
+        "price": "900",
         "details": [
-            "10 static photo of spaiderman",
-            "1 swing photography ",
-            "No videography",
-            "3 printed copy"
+            "20 static photo of spaiderman",
+            "20 swing photography ",
+            "10 videography",
+            "1 controversial clip"
         ]
     }
 ]

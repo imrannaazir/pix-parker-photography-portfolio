@@ -9,11 +9,11 @@ const Service = ({ service: { id, img, details, price, packageNo, packageName, p
         navigate(`/checkout/${id}`)
     }
     return (
-        <div className=' shadow-2xl w-[300px] relative rounded-lg'>
+        <div className=' shadow-2xl w-[300px] relative rounded-lg bg-[#2D2D38]'>
             <div>
                 <img className=' rounded-lg blur-[2px]' src={img} alt="" />
             </div>
-            <div className=' pt-20 pl-6'>
+            <div className=' pt-20 pl-6  text-gray-200'>
                 {
                     details.map(detail => <p key={detail} className=' py-2'><FontAwesomeIcon
                         className=' text-green-500 mr-3'

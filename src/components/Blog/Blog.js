@@ -1,15 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 
-const Blog = ({ blog: { img, blogTitle, blogKeyword } }) => {
-    console.log(img);
+const Blog = ({ blog: { id, img, blogTitle, blogKeyword } }) => {
+    const navigate = useNavigate()
+    const { blogId } = useParams()
+    const navigateDetails = id => {
+        navigate(`/blogDetails/${blogId}`)
+
+    }
     return (
-        <div className=' rounded-2xl shadow-2xl'>
+        <div className=' rounded-2xl shadow-2xl text-white  bg-[#2D2D38]'>
             <img className=' rounded-t-2xl' src={img} alt="" />
-            <p className=' font-semibold text-[#DF1F2D] w-[90%] mx-auto'>{blogKeyword}</p>
-            <p className=' text-lg font-semibold w-[90%] mx-auto'>{blogTitle}</p>
-            <p className=' text-sm flex justify-between w-[90%] mx-auto'><span>Author: Imran Nazir</span> <Link to='/'>Read more</Link> </p>
+            <div className=' pt-6'>
+                <p className=' font-semibold text-[#DF1F2D] w-[90%] mx-auto'>{blogKeyword}</p>
+                <p className=' text-lg font-semibold w-[90%] mx-auto'>{blogTitle}</p>
+                <p className=' text-sm flex justify-between w-[90%] mx-auto py-6'><span>Author: Imran Nazir</span>
+
+                    <button onClick={() => navigateDetails(id)}>Read more</button> </p>
+            </div>
 
         </div>
     );
