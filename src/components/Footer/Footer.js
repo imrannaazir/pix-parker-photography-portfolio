@@ -8,7 +8,7 @@ import linkedin from '../../assets/images/linkedin.png'
 const Footer = () => {
     return (
         <div>
-            <div className=' grid grid-cols-3 text-white w-[90%] mx-auto my-12  gap-20'>
+            <div className=' grid lg:grid-cols-3 text-white w-[90%] mx-auto my-12  gap-20'>
                 <div className=' border-r-2 border-white'>
                     <p className=' text-4xl font-mono font-semibold border-2 inline px-6 py-6'> <FontAwesomeIcon icon={faCameraRetro} />
                         PixParker

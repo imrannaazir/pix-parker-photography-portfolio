@@ -2,14 +2,14 @@ import React from 'react';
 import parker from '../../assets/images/parker.jpeg'
 const AboutParker = () => {
     return (
-        <div>
+        <div className=' '>
             <p className=' text-center text-4xl font-semibold mt-12 text-gray-400'>Who Am I<span className=' animate-ping text-6xl'>_</span></p>
-            <div className='w-[90%] mx-auto my-32 grid grid-cols-2' >
+            <div className='w-[90%] mx-auto my-32 grid lg:grid-cols-2' >
 
                 <div className='  relative'>
-                    <img className=' rounded-full absolute left-6 -top-6 z-10' src={parker} alt="" />
-                    <div className='w-[400px] h-[400px] border-2 border-[#DF1F2D] rounded-[190px] animate-spin -z-10'></div>
-                    <div className=' absolute top-3 left-2 w-[400px] h-[400px] border-2 border-white rounded-[190px] animate-spin '></div>
+                    <img className='  w-[300px] h-[300px]  lg:w-[400px] lg:h-[400px]  rounded-full absolute left-6 -top-6 z-10' src={parker} alt="" />
+                    <div className=' w-[300px] h-[300px]  lg:w-[400px] lg:h-[400px] border-2 border-[#DF1F2D] rounded-[190px] animate-spin -z-10'></div>
+                    <div className=' absolute top-3 left-2  w-[300px] h-[300px]  lg:w-[400px] lg:h-[400px]  border-2 border-white rounded-[190px] animate-spin '></div>
 
                 </div>
                 <div>

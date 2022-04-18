@@ -3,13 +3,19 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import google from '../../assets/images/google.png'
 import facebook from '../../assets/images/facebook.png'
 import github from '../../assets/images/github.png'
-import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import toast from 'react-hot-toast';
 
 const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
     let from = location.state?.from?.pathname || "/";
+
+    const [email, setEmail] = useState('');
+    const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(
+        auth
+    );
 
 
     const [userInfo, setUserInfo] = useState({
@@ -90,7 +96,11 @@ const Login = () => {
                 <p className=' pl-2 text-red-600'>{errors.passwordError}</p>
 
 
-                <p className=' text-right mr-5 text-sm  text-white'>Forget password?</p>
+                <p
+                    onClick={async () => {
+                        await sendPasswordResetEmail(email);
+                        toast.success('Sent email');
+                    }} className=' text-right mr-5 text-sm  text-white cursor-pointer text-red-500'>Forget password?</p>
 
 
 
