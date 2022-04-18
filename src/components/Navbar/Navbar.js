@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCameraRetro } from '@fortawesome/free-solid-svg-icons';
 import { signOut } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -20,9 +22,9 @@ const Navbar = () => {
     window.addEventListener('scroll', changeBackground)
 
     return (
-        <div className={` ${navbar ? 'sticky' : 'absolute'} text-lg w-[100%] top-0 ${navbar ? 'bg-[#DF1F2D]' : 'bg-transparent'}   py-6 text-white z-10`}>
+        <div className={` ${navbar ? 'sticky' : 'absolute'} text-lg w-[100%] top-0 ${navbar ? 'bg-[#DF1F2D]' : 'bg-transparent'}   py-6 text-white z-50 ${navbar ? 'shadow-lg' : 'shadow-none'}`}>
             <nav className=' flex justify-between w-[90%] mx-auto'>
-                <div>
+                <div className=' text-4xl font-mono font-semibold'> <FontAwesomeIcon icon={faCameraRetro} />
                     PixParker
                 </div>
                 <div className='flex gap-4'>
