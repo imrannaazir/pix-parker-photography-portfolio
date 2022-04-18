@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import google from '../../assets/images/google.png'
 import facebook from '../../assets/images/facebook.png'
 import github from '../../assets/images/github.png'
 import auth from '../../firebase.init';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 
 
 const SignUp = () => {
+    const navigate = useNavigate()
+    const location = useLocation()
+    let from = location.state?.from?.pathname || "/";
+    const [user] = useAuthState(auth)
 
     const [userInfo, setUserInfo] = useState({
         email: '',
@@ -67,17 +71,21 @@ const SignUp = () => {
 
     // useCreateUserWithEmailAndPassword
     const [
-        createUserWithEmailAndPassword,
-        user,
-        loading,
-        error,
+        createUserWithEmailAndPassword
     ] = useCreateUserWithEmailAndPassword(auth);
 
     const handleCreateUserWithEmail = e => {
         e.preventDefault()
         createUserWithEmailAndPassword(userInfo.email, userInfo.password)
     }
+    useEffect(() => {
+        if (user) {
+            navigate(from);
+        }
+    }, [user]);
 
+
+    const [signInWithGoogle] = useSignInWithGoogle(auth);
     return (
         <div className=' w-[380px] mx-auto shadow-md my-20 py-4 rounded-xl'>
             <p className='ml-[15px] text-2xl border-b-2 inline-block border-[#DF1F2D] my-3 text-white' >Sign up</p>
@@ -117,7 +125,7 @@ const SignUp = () => {
             </div>
             <div className=' text-center'>
                 <p className=' font-semibold my-2 text-gray-600'>Sign up with social media</p>
-                <button className='ml-2'><img className=' w-10 bg-gray-400 p-2 hover:bg-[#DF1F2D] rounded-full' src={google} alt="" /></button>
+                <button onClick={() => signInWithGoogle()} className='ml-2'><img className=' w-10 bg-gray-400 p-2 hover:bg-[#DF1F2D] rounded-full' src={google} alt="" /></button>
                 <button className='ml-2'><img className=' w-10 bg-gray-400 p-2 hover:bg-[#DF1F2D] rounded-full' src={facebook} alt="" /></button>
                 <button className='ml-2'><img className=' w-10 bg-gray-400 p-2 hover:bg-[#DF1F2D] rounded-full' src={github} alt="" /></button>
 

@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import google from '../../assets/images/google.png'
 import facebook from '../../assets/images/facebook.png'
 import github from '../../assets/images/github.png'
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 const Login = () => {
@@ -55,9 +55,7 @@ const Login = () => {
     //sign in with email and password hook
     const [
         signInWithEmailAndPassword,
-        user,
-        loading,
-        error,
+
     ] = useSignInWithEmailAndPassword(auth);
 
 
@@ -65,13 +63,17 @@ const Login = () => {
     const handleLoginWithEmail = e => {
         e.preventDefault()
         signInWithEmailAndPassword(userInfo.email, userInfo.password)
-
     }
+
+    const [signInWithGoogle] = useSignInWithGoogle(auth);
+    const [user] = useAuthState(auth)
+
     useEffect(() => {
         if (user) {
             navigate(from);
         }
     }, [user]);
+
     return (
         <div className='w-[380px] mx-auto shadow-md my-20 py-4 rounded-xl'>
             <p className='ml-[15px] text-2xl border-b-2 inline-block border-[#DF1F2D] my-3  text-white' >Login</p>
@@ -109,7 +111,7 @@ const Login = () => {
             </div>
             <div className=' text-center'>
                 <p className=' font-semibold my-2 text-gray-600'>Login with social media</p>
-                <button className='ml-2'><img className=' w-10 bg-gray-400 p-2 hover:bg-[#DF1F2D] rounded-full' src={google} alt="" /></button>
+                <button onClick={() => signInWithGoogle()} className='ml-2'><img className=' w-10 bg-gray-400 p-2 hover:bg-[#DF1F2D] rounded-full' src={google} alt="" /></button>
                 <button className='ml-2'><img className=' w-10 bg-gray-400 p-2 hover:bg-[#DF1F2D] rounded-full' src={facebook} alt="" /></button>
                 <button className='ml-2'><img className=' w-10 bg-gray-400 p-2 hover:bg-[#DF1F2D] rounded-full' src={github} alt="" /></button>
 
