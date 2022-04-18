@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import google from '../../assets/images/google.png'
 import facebook from '../../assets/images/facebook.png'
@@ -10,6 +10,7 @@ const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
     let from = location.state?.from?.pathname || "/";
+
 
     const [userInfo, setUserInfo] = useState({
         email: '',
@@ -64,8 +65,13 @@ const Login = () => {
     const handleLoginWithEmail = e => {
         e.preventDefault()
         signInWithEmailAndPassword(userInfo.email, userInfo.password)
-        navigate(from, { replace: true });
+
     }
+    useEffect(() => {
+        if (user) {
+            navigate(from);
+        }
+    }, [user]);
     return (
         <div className=' w-[380px] mx-auto shadow-md my-20 py-4 rounded-xl'>
             <p className='ml-[15px] text-2xl border-b-2 inline-block border-[#DF1F2D] my-3' >Login</p>
