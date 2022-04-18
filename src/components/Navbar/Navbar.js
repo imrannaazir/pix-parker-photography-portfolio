@@ -1,14 +1,26 @@
 import { signOut } from 'firebase/auth';
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const Navbar = () => {
     const [user, loading, error] = useAuthState(auth);
+    const [navbar, setNavbar] = useState(false)
+
+    const changeBackground = () => {
+        if (window.scrollY >= 76) {
+            setNavbar(true)
+        }
+        else {
+            setNavbar(false)
+        }
+    }
+
+    window.addEventListener('scroll', changeBackground)
 
     return (
-        <div className=' sticky w-[100%] top-0 bg-[#DF1F2D]   py-6 text-white z-10'>
+        <div className={` ${navbar ? 'sticky' : 'absolute'} text-lg w-[100%] top-0 ${navbar ? 'bg-[#DF1F2D]' : 'bg-transparent'}   py-6 text-white z-10`}>
             <nav className=' flex justify-between w-[90%] mx-auto'>
                 <div>
                     PixParker
