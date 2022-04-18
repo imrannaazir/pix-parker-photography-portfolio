@@ -14,9 +14,10 @@ const Navbar = () => {
                     PixParker
                 </div>
                 <div className='flex gap-4'>
-                    <Link to='/'>Home</Link>
-                    <Link to='/services'>Service</Link>
-                    <Link to='/blogs'>Blogs</Link>
+
+                    <a href='/#home'>Home</a>
+                    <a href='/#services'>Service</a>
+                    <a href='/#blogs'>Blogs</a>
                     <Link to='/about'>About</Link>
                 </div>
                 {user ? <button onClick={() => signOut(auth)}>Logout</button> : <div className='flex gap-4'>

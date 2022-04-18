@@ -10,7 +10,7 @@ const Service = ({ service: { img, details, price, packageNo, packageName, packa
             </div>
             <div className=' pt-20 pl-6'>
                 {
-                    details.map(detail => <p className=' py-2'><FontAwesomeIcon
+                    details.map(detail => <p key={detail} className=' py-2'><FontAwesomeIcon
                         className=' text-green-500 mr-3'
                         icon={faCheckCircle} />{detail}</p>)
                 }
