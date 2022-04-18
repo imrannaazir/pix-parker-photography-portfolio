@@ -11,7 +11,7 @@ const Service = ({ service: { id, img, details, price, packageNo, packageName, p
     return (
         <div className=' shadow-2xl w-[300px] relative rounded-lg'>
             <div>
-                <img className=' rounded-lg blur-sm' src={img} alt="" />
+                <img className=' rounded-lg blur-[2px]' src={img} alt="" />
             </div>
             <div className=' pt-20 pl-6'>
                 {
@@ -24,9 +24,9 @@ const Service = ({ service: { id, img, details, price, packageNo, packageName, p
             <div className=' h-[100px] w-[100px] rounded-full flex items-center justify-center shadow-xl text-3xl font-bold  bg-white  absolute top-[120px] left-[100px]'><span className=' font-normal text-lg'>$</span>{price}
             </div>
             <div className='flex flex-col items-center justify-end absolute top-0 left-1 text-white'>
-                <p>{packageNo}</p>
+                <p className=' text-[#DF1F2D] font-bold'>{packageNo}</p>
                 <p className=' text-2xl font-bold'>{packageName}</p>
-                <p className=' text-xl '>{packageSubtitle}</p>
+                <p className=' text-xl text-gray-200 font-serif'>{packageSubtitle}</p>
             </div>
         </div>
     );
