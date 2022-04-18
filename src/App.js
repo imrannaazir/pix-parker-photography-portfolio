@@ -11,6 +11,7 @@ import SignUp from './components/SignUp/SignUp';
 import banner from '../src/assets/videos/banner.mp4'
 import Checkout from './components/CheckOut/Checkout';
 import RequireAuth from './components/RequireAuth/RequireAuth';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
     </div>
