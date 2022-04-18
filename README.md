@@ -1,6 +1,22 @@
-# Getting Started with Create React App
+# Project Name : PixParker.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Live site link of This projects: [PixParker](https://pix-parker.web.app/).
+
+# Project Details:
+ * This project named PixParker was build for a independent Photographer.
+ * In the home page there are 6 section these are Navbar, banner, About me, Pricing plan, blogs and footer.
+ * I made the background of the navbar transparent and when a user will scrolling the page there will be a background color.
+ * The banner section is describing the photographer.
+ * There is a services section. When a user click the button of this section he will be redirected into login page if he don't logged in.
+
+ # All application that have been used in this project.
+ * React: The main application of this project is React JS
+ * Tailwind: Tailwind is used in this project for styling
+ * Font Awesome : I used font awesome for having some icons.
+ * React Router : I install React Router in this project for navigating.
+ * react hot toast : for toast I used React hot toast
+ * Firebase : I used firebase in this project for getting started authentication system.
+ * React firebase hooks: I used react fire base hooks for making easy authentication system
 
 ## Available Scripts
 
@@ -11,7 +27,7 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
+The page will reload when you make changes.
 You may also see any lint errors in the console.
 
 ### `npm test`

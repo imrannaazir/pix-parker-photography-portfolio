@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import toast from 'react-hot-toast';
 import { useNavigate, useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
 
@@ -34,6 +35,7 @@ const Checkout = () => {
     const handleSubmit = e => {
         e.preventDefault()
         navigate('/')
+        toast.success('request send')
 
     }
     const service = services.find(a => a.id === serviceId)

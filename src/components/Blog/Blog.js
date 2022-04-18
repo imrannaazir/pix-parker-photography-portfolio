@@ -4,9 +4,8 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 
 const Blog = ({ blog: { id, img, blogTitle, blogKeyword } }) => {
     const navigate = useNavigate()
-    const { blogId } = useParams()
     const navigateDetails = id => {
-        navigate(`/blogDetails/${blogId}`)
+        navigate(`/blogDetails/${id}`)
 
     }
     return (

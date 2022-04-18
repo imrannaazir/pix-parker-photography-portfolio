@@ -8,17 +8,18 @@ import Login from './components/Login/Login';
 import Navbar from './components/Navbar/Navbar';
 import Services from './components/Services/Services';
 import SignUp from './components/SignUp/SignUp';
-import banner from '../src/assets/videos/banner.mp4'
 import Checkout from './components/CheckOut/Checkout';
 import RequireAuth from './components/RequireAuth/RequireAuth';
 import NotFound from './components/NotFound/NotFound';
 import BlogDetails from './components/BlogDetails/BlogDetails';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
     <div className='bg-black absolute top-0 w-full'>
 
       <Navbar />
+      <Toaster />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
