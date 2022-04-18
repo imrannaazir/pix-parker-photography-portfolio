@@ -10,7 +10,7 @@ const Blog = ({ blog: { id, img, blogTitle, blogKeyword } }) => {
     }
     return (
         <div className=' rounded-2xl shadow-2xl text-white  bg-[#2D2D38]'>
-            <img className=' rounded-t-2xl' src={img} alt="" />
+            <img className=' rounded-t-2xl w-full' src={img} alt="" />
             <div className=' pt-6'>
                 <p className=' font-semibold text-[#DF1F2D] w-[90%] mx-auto'>{blogKeyword}</p>
                 <p className=' text-lg font-semibold w-[90%] mx-auto'>{blogTitle}</p>

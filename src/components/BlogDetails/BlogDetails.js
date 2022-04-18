@@ -11,23 +11,23 @@ const About = () => {
         {
             id: "1",
 
-            img: "https://www.simplilearn.com/ice9/free_resources_article_thumb/The_Importance_of_User_Authentication_Methods_in_Cyber_Security.jpg",
+            img: "https://nordicapis.com/wp-content/uploads/What-is-the-Difference-Between-Authorization-and-Authentication-.png",
             blogTitle: "Difference between authorization and authentication?",
-            blogBody: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque quis repellendus eum sint non officia sit beatae expedita aut cupiditate fuga nam dolorum, nobis facilis officiis itaque tenetur aperiam eveniet tempore blanditiis ratione voluptatibus laudantium hic. Maxime similique sequi earum eos, explicabo aperiam vitae ut provident quod quae obcaecati non."
+            blogBody: "Most of the time people are matching two words 'Authentication' and 'Authorization'. But there are bits of difference between this two. Authentication is the system that verifies the user. On the other hand, Authorization determines what can user access. Authentication is the first step of any security system and Authorization always comes after Authentication."
         },
         {
             id: "2",
 
-            img: "https://www.simplilearn.com/ice9/free_resources_article_thumb/The_Importance_of_User_Authentication_Methods_in_Cyber_Security.jpg",
+            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTicEGsfjk3JTcTuo67sSbHTUAjc7ZuyN3BDbbmlFuzhW,_ZHwPQKHFSKN2tJ,_bg2sIGkB8&usqp=CAU",
             blogTitle: "Why are you using firebase? What other options do you have to implement authentication?",
-            blogBody: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque quis repellendus eum sint non officia sit beatae expedita aut cupiditate fuga nam dolorum, nobis facilis officiis itaque tenetur aperiam eveniet tempore blanditiis ratione voluptatibus laudantium hic. Maxime similique sequi earum eos, explicabo aperiam vitae ut provident quod quae obcaecati non."
+            blogBody: "Firebase is a very popular platform for giving authentication services. I am also using firebase for authenticating my projects. Manual authentication is very hard to handle. for this reason, most of the developers are using a third-party application for authentication. Firebase is very popular for authentication. But there are many other services that are being used for implementing authentication services like Auth0, MongoDB, Passport, Okta, etc."
         },
         {
             id: "3",
 
-            img: "https://www.simplilearn.com/ice9/free_resources_article_thumb/The_Importance_of_User_Authentication_Methods_in_Cyber_Security.jpg",
+            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1lDETM_GegbEaEV-WS99AMXoYCCdjoJalL57N2ZkWZ-So1SJ6zs4VMiULlNM_3Zxkefc&usqp=CAU",
             blogTitle: "What other services does firebase provide other than authentication?",
-            blogBody: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque quis repellendus eum sint non officia sit beatae expedita aut cupiditate fuga nam dolorum, nobis facilis officiis itaque tenetur aperiam eveniet tempore blanditiis ratione voluptatibus laudantium hic. Maxime similique sequi earum eos, explicabo aperiam vitae ut provident quod quae obcaecati non."
+            blogBody: "Many of us think that firebase only provides authentication services. But there are many other services that come from firebase. Firebase is first built by firebase inc and then Google acquires it. Now it is providing a lot of Android, ios, and web application services.There are most useful services are Athentication ,_Remote Config,_Clouding ,_Hosting ,_Google Analytics ,_Dynamic Links"
         }
     ]
     const blog = blogs.find(a => a.id === blogId)
