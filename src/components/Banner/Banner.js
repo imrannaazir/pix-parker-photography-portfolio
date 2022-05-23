@@ -7,7 +7,7 @@ const Banner = () => {
             <div className=' relative'>
                 <video className='w-[100%] static top-0' src={banner} autoPlay loop muted></video>
                 <div className=' absolute top-12 lg:top-40 left-32 text-white '>
-                    <div className='motion-safe:animate-bounce'>
+                    <div className=''>
                         <p className=' lg:text-4xl text-[#DF1F2D]'>Hello</p>
                         <p className='lg:text-8xl font-semibold'>I'm Peter Parker.</p>
                         <p className=' lg:text-2xl font-serif text-gray-200'>I'm proving Photograph & Videograph of my friend, Spiderman!</p>

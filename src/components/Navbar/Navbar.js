@@ -1,14 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCameraRetro, faToggleOff, faToggleOn } from '@fortawesome/free-solid-svg-icons';
 import { signOut } from 'firebase/auth';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const Navbar = () => {
     const [open, setOpen] = useState(true)
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
     const [navbar, setNavbar] = useState(false)
 
 
@@ -24,12 +24,12 @@ const Navbar = () => {
     window.addEventListener('scroll', changeBackground)
 
     return (
-        <div className={` ${navbar ? 'sticky' : 'absolute'} text-lg w-[100%] top-0 ${navbar ? 'bg-black' : 'bg-transparent'}   py-6 text-white z-50 ${navbar ? 'shadow-lg' : 'shadow-none'} }`}>
+        <div className={` ${navbar ? 'sticky' : 'absolute'} text-lg w-[100%] top-0 ${navbar ? 'bg-black' : 'bg-transparent'}   py-3 text-white z-50 ${navbar ? 'shadow-lg' : 'shadow-none'} }`}>
             <nav className=' flex justify-between items-center w-[90%] mx-auto'>
                 <div className=' lg:text-4xl font-mono font-semibold'> <FontAwesomeIcon icon={faCameraRetro} />
                     PixParker
                 </div>
-                <div className={`flex flex-col lg:flex-row gap-4 absolute ${!open ? 'top-16' : 'top-[-220px]'} lg:static ${navbar ? 'bg-black' : 'bg-transparent'} w-full`}>
+                <div className={`flex flex-col lg:flex-row gap-4 absolute ${!open ? 'top-16' : 'top-[-220px]'} lg:static ${navbar ? 'bg-black' : 'bg-transparent'} w-full lg:w-[50%] left-0 pl-5`}>
 
                     <Link to='/home'>Home</Link>
                     <a href='home#services'>Service</a>
